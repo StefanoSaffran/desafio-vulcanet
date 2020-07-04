@@ -26,17 +26,9 @@ const Content: FC = () => {
   const [quantity, setQuantity] = useState(0);
   const [selectedPeriod, setSelectedPeriod] = useState('monthly');
   const [selectedPlan, setSelectedPlan] = useState('Plano 2.0');
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    try {
-      setLoading(true);
-      api.get('plans').then(({ data }) => setPlans(data));
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
+    api.get('plans').then(({ data }) => setPlans(data));
   }, []);
 
   useEffect(() => {
@@ -64,15 +56,11 @@ const Content: FC = () => {
     return (planPrice?.prices[selectedPeriod] || 0) + attendantPrice * quantity;
   }, [plans, selectedPeriod, selectedPlan, quantity, attendantPrice]);
 
-  if (loading) {
-    return (
-      <Container>
-        <Loading />
-      </Container>
-    );
-  }
-
-  return (
+  return total === 0 || attendantPrice === 0 ? (
+    <Container>
+      <Loading />
+    </Container>
+  ) : (
     <Container>
       <ButtonsContainer>
         <Button
