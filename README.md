@@ -10,15 +10,13 @@
 
 <p align="center">
   <a href="#computer-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-como-executar">ℹComo executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#mailbox_with_mail-contato">Contato</a>
 </p>
 
 ## :computer: Projeto
 
   O Desafio consiste em implementar a tela de pagamentos do site do peçaZap utilizando **React**.
-
-<br>
 
 ## :information_source: Como executar
 
