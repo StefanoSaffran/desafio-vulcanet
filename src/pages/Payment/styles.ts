@@ -5,5 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  transform: translateY(10%);
+  @media (min-width: 930px) {
+    transform: translateY(10%);
+  }
 `;

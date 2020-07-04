@@ -4,12 +4,19 @@ import { CheckmarkCircle2 } from 'styled-icons/evaicons-solid';
 
 export const Container = styled.div`
   width: 100%;
-  padding: 20px 40px;
-
-  overflow-y: hidden;
+  padding: 25px 40px;
 
   &:not(:last-child) {
-    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #ddddddaa;
+  }
+
+  @media (min-width: 930px) {
+    padding: 15px 40px;
+
+    &:not(:last-child) {
+      border-bottom: 0;
+      border-right: 1px solid #dddddd;
+    }
   }
 `;
 
@@ -79,7 +86,7 @@ export const Button = styled.button`
 `;
 
 export const Features = styled.ul`
-  height: 100%;
+  max-height: calc(537px - 84px - 36px - 28px);
   overflow-y: scroll;
 
   margin-top: 20px;
@@ -93,13 +100,11 @@ export const Feature = styled.li`
   display: flex;
   align-items: center;
 
-  & + li {
-  }
-
   span {
     color: var(--tertiary);
     font-size: 16px;
     line-height: 28px;
+    flex: 1;
   }
 `;
 

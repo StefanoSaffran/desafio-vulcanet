@@ -6,8 +6,13 @@ export const Container = styled.div`
 
   display: flex;
   align-items: center;
+  justify-content: space-around;
 
   padding: 0 40px;
+
+  @media (min-width: 930px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const Details = styled.div`
@@ -53,11 +58,21 @@ export const Quantity = styled.div`
 `;
 
 export const DecrementIcon = styled(ChevronLeft)`
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
+
+  @media (min-width: 930px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const IncrementIcon = styled(ChevronRight)`
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
+
+  @media (min-width: 930px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
