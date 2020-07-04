@@ -3,9 +3,9 @@
 </h1>
 
 <p align="center">
-<img alt="Made by Stefano" src="https://img.shields.io/badge/made%20by-StefanoSaffran-%20>
-<img alt="Project top programing language" src="https://img.shields.io/github/languages/top/StefanoSaffran/desafio-vulcanet">
-<img alt="Repository size" src="https://img.shields.io/github/repo-size/StefanoSaffran/desafio-vulcanet>
+  <img alt="Made by Stefano" src="https://img.shields.io/badge/made%20by-StefanoSaffran-%20">
+  <img alt="Project top programing language" src="https://img.shields.io/github/languages/top/StefanoSaffran/desafio-vulcanet">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/StefanoSaffran/desafio-vulcanet">
 </p>
 
 <p align="center">
