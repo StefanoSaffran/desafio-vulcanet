@@ -6,6 +6,7 @@ import api from '../../services/api';
 import Plan from '../Plan';
 import Attendant from '../Attendant';
 import Footer from '../Footer';
+import Loading from '../Loading';
 
 import { Container, ButtonsContainer, Button, Plans } from './styles';
 
@@ -25,9 +26,17 @@ const Content: FC = () => {
   const [quantity, setQuantity] = useState(0);
   const [selectedPeriod, setSelectedPeriod] = useState('monthly');
   const [selectedPlan, setSelectedPlan] = useState('Plano 2.0');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    api.get('plans').then(({ data }) => setPlans(data));
+    try {
+      setLoading(true);
+      api.get('plans').then(({ data }) => setPlans(data));
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -54,6 +63,14 @@ const Content: FC = () => {
 
     return (planPrice?.prices[selectedPeriod] || 0) + attendantPrice * quantity;
   }, [plans, selectedPeriod, selectedPlan, quantity, attendantPrice]);
+
+  if (loading) {
+    return (
+      <Container>
+        <Loading />
+      </Container>
+    );
+  }
 
   return (
     <Container>
