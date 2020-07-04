@@ -5,16 +5,28 @@ import { Container, PriceDetails } from './styles';
 interface IProps {
   total: number;
   selectedPlan: string;
+  selectedPeriod: string;
+  handleFinishContract(): void;
 }
 
-const Footer: FC<IProps> = ({ total, selectedPlan }) => {
+const Footer: FC<IProps> = ({
+  total,
+  selectedPlan,
+  selectedPeriod,
+  handleFinishContract,
+}) => {
   return (
     <Container>
       <PriceDetails>
         <strong>Total: R${total}/mês</strong>
-        <span>Plano selecionado: {selectedPlan} - Mensal</span>
+        <span>
+          Plano selecionado: {selectedPlan} -{' '}
+          {selectedPeriod === 'monthly' ? 'Mensal' : 'Anual'}
+        </span>
       </PriceDetails>
-      <button type="button">Contratar</button>
+      <button type="button" onClick={() => handleFinishContract()}>
+        Contratar
+      </button>
     </Container>
   );
 };
