@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 1150px;
-  height: 823px;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
 
   background: var(--white);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -12,6 +13,12 @@ export const Container = styled.div`
   flex-direction: column;
 
   overflow: hidden;
+
+  @media (min-width: 930px) {
+    width: 1150px;
+    height: 823px;
+    margin: 0;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -51,14 +58,15 @@ export const Button = styled.button`
 
 export const Plans = styled.div`
   width: 100%;
-  height: calc(100% - 23px - 37px - 30px - 90px - 106px);
+  height: 100%;
 
   margin-top: 30px;
 
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (min-width: 785px) {
+  @media (min-width: 930px) {
     grid-template-columns: repeat(3, 1fr);
+    height: calc(100% - 23px - 37px - 30px - 90px - 106px);
   }
 `;

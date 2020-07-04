@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect, FC, useMemo } from 'react';
+import { toast } from 'react-toastify';
 
 import api from '../../services/api';
 
@@ -35,6 +36,17 @@ const Content: FC = () => {
 
   const handleChangePeriod = useCallback(period => {
     setSelectedPeriod(period);
+  }, []);
+
+  const handleFinishContract = useCallback(() => {
+    toast('Contrato realizado com sucesso!!', {
+      position: 'top-right',
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }, []);
 
   const total = useMemo(() => {
@@ -78,7 +90,12 @@ const Content: FC = () => {
         setQuantity={setQuantity}
       />
 
-      <Footer total={total} selectedPlan={selectedPlan} />
+      <Footer
+        total={total}
+        selectedPlan={selectedPlan}
+        selectedPeriod={selectedPeriod}
+        handleFinishContract={handleFinishContract}
+      />
     </Container>
   );
 };
