@@ -55,6 +55,7 @@ export const Container = styled.footer`
   }
 
   @media (min-width: 930px) {
+    justify-content: space-between;
     > button {
       font-size: 24px;
       line-height: 28px;
@@ -79,6 +80,12 @@ export const PriceDetails = styled.div`
     color: var(--senary);
     font-size: 16px;
     line-height: 18px;
+  }
+
+  @media (min-width: 600px) {
+    strong {
+      text-align: start;
+    }
   }
 
   @media (min-width: 930px) {

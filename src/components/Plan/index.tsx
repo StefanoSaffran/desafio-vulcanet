@@ -51,7 +51,7 @@ const Plan: FC<IProps> = ({
 
       <Features>
         {features?.map(feature => (
-          <Feature>
+          <Feature key={feature}>
             <CheckIcon />
             <span>{feature}</span>
           </Feature>
